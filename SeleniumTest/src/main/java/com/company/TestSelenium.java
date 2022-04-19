@@ -1,26 +1,24 @@
 package com.company;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Ignore;
-import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class TestSelenium {
 
     private static ChromeDriver driver;
     WebElement element;
 
-    @BeforeClass
+    @Before
     public static void openBrowser() {
         System.setProperty("webdriver.chrome.driver",
                 "C:\\Users\\manishabajirao.balwa\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -29,7 +27,6 @@ public class TestSelenium {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Ignore
     @Test
     public void testSeleniumLocatorsWithScrolling() {
         driver.get("http://demo.automationtesting.in");
@@ -132,7 +129,7 @@ public class TestSelenium {
         //Assertion.assertEquals("Hello SW Test Academy! How are you today?",actualPromptMessage.getText());
     }
 
-    @AfterClass
+    @After
     public static void closeBrowser() {
         //driver.quit();
     }

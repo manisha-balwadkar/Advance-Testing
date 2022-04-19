@@ -1,12 +1,12 @@
 package com.company;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +15,7 @@ public class StudyMakeMyTrip {
     private static ChromeDriver driver;
     WebElement element;
 
-    @BeforeClass
+    @Before
     public static void openBrowser() {
         System.setProperty("webdriver.chrome.driver",
                 "C:\\Users\\manishabajirao.balwa\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -27,7 +27,6 @@ public class StudyMakeMyTrip {
     @Test
     public void testSeleniumLocatorsWithScrolling() {
         driver.get("https://www.makemytrip.com/");
-        //Assert.assertEquals("5 Balloons | Jack of many web trades", driver.getTitle());
         System.out.println(driver.getTitle());
 
         // get by xpath
@@ -47,7 +46,7 @@ public class StudyMakeMyTrip {
     }
 
 
-    @AfterClass
+    @After
     public static void closeBrowser() {
         driver.quit();
     }
