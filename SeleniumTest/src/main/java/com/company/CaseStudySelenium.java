@@ -13,6 +13,7 @@ public class CaseStudySelenium {
 
     private static WebDriver driver;
 
+    // test check-in to github
     public static void main(String[] arg) throws InterruptedException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setAcceptInsecureCerts(true);
